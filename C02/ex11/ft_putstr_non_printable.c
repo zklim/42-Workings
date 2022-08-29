@@ -1,38 +1,40 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/29 23:43:29 by zhlim             #+#    #+#             */
+/*   Updated: 2022/08/29 23:52:11 by zhlim            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include <unistd.h>
 
 void	ft_putstr_non_printable(char *str)
 {
-	char hex[] = "0123456789abcdef";
-	char a;
-	char b;
-	int i;
+	int	a;
+	int	b;
+	int	i;
+	char	*hex;
 
 	i = 0;
+	hex = "0123456789abcdef";
 	while (str[i] != '\0')
 	{
-		if (str[i] < 32 || str[i] > 126)
+		if (str[i] < 32)
 		{
-			ft_putchar('\\');
 			a = str[i] / 16;
 			b = str[i] % 16;
-			ft_putchar(hex[a]);
-			ft_putchar(hex[b]);
+			write(1, "\\", 1);
+			write(1, &hex[a], 1);
+			write(1, &hex[b], 1);
 		}
 		else
 		{
-			ft_putchar(str[i]);
+			write(1, &str[i], 1);
 		}
 		i++;
 	}
-}
-
-int	main(int ac, char **av)
-{
-	(void) ac;
-	ft_putstr_non_printable(av[1]);
 }
