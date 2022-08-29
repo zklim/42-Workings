@@ -14,9 +14,9 @@
 
 void	ft_putstr_non_printable(char *str)
 {
-	int	a;
-	int	b;
-	int	i;
+	int		a;
+	int		b;
+	int		i;
 	char	*hex;
 
 	i = 0;
