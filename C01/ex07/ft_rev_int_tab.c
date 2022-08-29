@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/27 14:19:07 by zhlim             #+#    #+#             */
-/*   Updated: 2022/08/27 14:23:57 by zhlim            ###   ########.fr       */
+/*   Created: 2022/08/25 15:45:23 by zhlim             #+#    #+#             */
+/*   Updated: 2022/08/29 15:30:54 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	unsigned int	i;
+	int	i;
+	int	tmp;
 
 	i = 0;
-	while (src[i] != '\0')
+	size -= 1;
+	while (i < size)
 	{
-		if (i < size)
-		{
-			dest[i] = src[i];
-		}
-		if (i == size)
-		{
-			dest[i] = '\0';
-		}
+		tmp = tab[i];
+		tab[i] = tab[size];
+		tab[size] = tmp;
 		i++;
+		size--;
 	}
-	if (src[i] == '\0')
-	{
-		dest[i] = '\0';
-	}
-	return (i);
 }

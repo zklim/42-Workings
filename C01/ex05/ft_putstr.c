@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/27 14:19:07 by zhlim             #+#    #+#             */
-/*   Updated: 2022/08/27 14:23:57 by zhlim            ###   ########.fr       */
+/*   Created: 2022/08/25 14:16:21 by zhlim             #+#    #+#             */
+/*   Updated: 2022/08/25 15:47:55 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
+#include <unistd.h>
+
+void	ft_putstr(char *str)
+{	
+	int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if (i < size)
-		{
-			dest[i] = src[i];
-		}
-		if (i == size)
-		{
-			dest[i] = '\0';
-		}
+		write(1, (str + i), 1);
 		i++;
 	}
-	if (src[i] == '\0')
-	{
-		dest[i] = '\0';
-	}
-	return (i);
 }
