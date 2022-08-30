@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 23:27:02 by zhlim             #+#    #+#             */
-/*   Updated: 2022/08/25 23:31:32 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/08/30 19:03:39 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@ int	ft_str_is_printable(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] == 0 || str[i] >= 32 && str[i] <= 126)
+	while (str[i] != '\0')
 	{
-		i++;
-		if (str[i] == '\0')
+		if (str[i] < 32)
 		{
-			return (1);
+			return (0);
 		}
+		i++;
 	}
-	return (0);
+	return (1);
 }
