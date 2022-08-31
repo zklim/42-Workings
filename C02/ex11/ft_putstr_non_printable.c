@@ -6,11 +6,9 @@
 /*   By: zhlim < zhlim@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 23:43:29 by zhlim             #+#    #+#             */
-/*   Updated: 2022/08/30 12:55:01 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/08/31 13:42:33 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 void	ft_putstr_non_printable(char *str)
 {
@@ -23,7 +21,7 @@ void	ft_putstr_non_printable(char *str)
 	hex = "0123456789abcdef";
 	while (str[i] != '\0')
 	{
-		if (str[i] < 32)
+		if (str[i] < 32 || str[i] > 126)
 		{
 			a = str[i] / 16;
 			b = str[i] % 16;

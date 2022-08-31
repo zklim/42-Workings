@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: zhlim < zhlim@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 00:52:10 by zhlim             #+#    #+#             */
-/*   Updated: 2022/08/27 01:22:16 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/08/31 13:32:27 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,13 @@ char	*ft_strcapitalize(char *str)
 		str[0] -= 32;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 48 && str[i] <= 57)
-		{
-			i++;
-			continue ;
-		}
-		else if (!(str[i] >= 'A' && str[i] <= 'Z'))
-		{
-			if (!(str[i] >= 'a' && str[i] <= 'z'))
-			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					str[i + 1] -= 32;
-				}
-			}
-		}
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+		if (str[i] >= 'a' && str[i] <= 'z')
+			if (!(str[i - 1] >= 'a' && str[i - 1] <= 'z'))
+				if (!(str[i - 1] >= '0' && str[i - 1] <= '9'))
+					if (!(str[i - 1] <= 'Z' && str[i - 1] >= 'A'))
+						str[i] -= 32;
 		i++;
 	}
 	return (str);

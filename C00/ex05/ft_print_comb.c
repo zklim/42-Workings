@@ -3,13 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhlim <zhlim@student.42kl.edu.myi>         +#+  +:+       +#+        */
+/*   By: zhlim < zhlim@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 13:04:49 by zhlim             #+#    #+#             */
-/*   Updated: 2022/08/21 13:04:51 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/08/22 13:15:23 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+
+void	ft_print(char q, char w, char e)
+{
+	write(1, &q, 1);
+	write(1, &w, 1);
+	write(1, &e, 1);
+	if (q < '7')
+		write(1, ", ", 2);
+}
 
 void	ft_print_comb(void)
 {
@@ -33,13 +41,4 @@ void	ft_print_comb(void)
 		}
 		q++;
 	}
-}
-
-void	ft_print(char q, char w, char e)
-{
-	write(1, &q, 1);
-	write(1, &w, 1);
-	write(1, &e, 1);
-	if (q < '7')
-		write(1, ", ", 2);
 }
