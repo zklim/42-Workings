@@ -6,9 +6,10 @@
 /*   By: zhlim < zhlim@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 23:43:29 by zhlim             #+#    #+#             */
-/*   Updated: 2022/08/31 13:42:33 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/08/31 16:58:01 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
 void	ft_putstr_non_printable(char *str)
 {

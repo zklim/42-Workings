@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:11:52 by zhlim             #+#    #+#             */
-/*   Updated: 2022/08/30 18:56:54 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/08/31 16:57:28 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[i] = src[i];
 		i++;
 	}
-	while (dest[i] != '\0')
+	while (i < n)
 	{
 		dest[i] = '\0';
 		i++;
