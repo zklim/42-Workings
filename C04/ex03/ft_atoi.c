@@ -1,51 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhlim < zhlim@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 13:06:24 by zhlim             #+#    #+#             */
-/*   Updated: 2022/09/01 13:06:41 by zhlim            ###   ########.fr       */
+/*   Created: 2022/09/01 13:47:18 by zhlim             #+#    #+#             */
+/*   Updated: 2022/09/01 18:24:02 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_write(int nb)
+int	ft_atoi(char *str)
 {
-	char	nbr[10];
-	int		i;
+	int	sign;
+	int	ret;
+	int	i;
 
+	sign = 1;
+	ret = 0;
 	i = 0;
-	while (nb)
+	while (str[i] < '0' || str[i] > '9')
 	{
-		nbr[i] = nb % 10 + '0';
-		nb /= 10;
+		if (str[i] == '-' || str[i] == '+')
+		{
+			if (str[i] == '-')
+				sign *= -1;
+		}
+		if (str[i] == '\0')
+			return (0);
 		i++;
 	}
-	while (i--)
-		write(1, &nbr[i], 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	int	i;
-	int	n;
-
-	i = 0;
-	n = -1;
-	if (nb <= 2147483647)
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (nb == 0)
-			write(1, "0", 1);
-		if (nb > 0)
-			ft_write(nb);
-		if (nb < 0)
-		{
-			nb *= n;
-			write(1, "-", 1);
-			ft_write(nb);
-		}
+		ret = (str[i] - '0') + (ret * 10);
+		i++;
 	}
+	return (ret * sign);
 }

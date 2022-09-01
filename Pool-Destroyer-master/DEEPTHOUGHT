@@ -1,0 +1,108 @@
+$> hostname; uname -msr
+u91z01s01.42kl.edu.my
+Darwin 19.6.0 x86_64
+$> date
+Thu  1 Sep 2022 17:35:38 +08
+$> gcc --version
+$> clang --version
+Apple clang version 12.0.0 (clang-1200.0.32.28)
+Target: x86_64-apple-darwin19.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> echo $USER_NAME
+zhlim
+
+Ready for testing
+
+LOADING c03:
+
+= ex00 =
+==========================================
+
+Norme: ./src/c03/ex00/ft_strcmp.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c03/ex00/main.c ./src/c03/ex00/ft_strcmp.c -o /Users/zhlim/Checker/Pool-Destroyer-master/user_output/c03/ex00
+> test 1
+diff ok :D
+
+> test 2
+diff ok :D
+
+> test 3
+diff ok :D
+
+= ex01 =
+==========================================
+
+Norme: ./src/c03/ex01/ft_strncmp.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c03/ex01/main.c ./src/c03/ex01/ft_strncmp.c -o /Users/zhlim/Checker/Pool-Destroyer-master/user_output/c03/ex01
+> test 1
+diff ok :D
+
+> test 2
+diff ok :D
+
+> test 3
+diff ok :D
+
+= ex02 =
+==========================================
+
+Norme: ./src/c03/ex02/ft_strcat.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c03/ex02/main.c ./src/c03/ex02/ft_strcat.c -o /Users/zhlim/Checker/Pool-Destroyer-master/user_output/c03/ex02
+> test 1
+diff ok :D
+
+> test 2
+diff ok :D
+
+> test 3
+diff ok :D
+
+= ex03 =
+==========================================
+
+Norme: ./src/c03/ex03/ft_strncat.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c03/ex03/main.c ./src/c03/ex03/ft_strncat.c -o /Users/zhlim/Checker/Pool-Destroyer-master/user_output/c03/ex03
+> test 1
+diff ok :D
+
+> test 2
+diff ok :D
+
+> test 3
+diff ok :D
+
+= ex04 =
+==========================================
+
+Norme: ./src/c03/ex04/ft_strstr.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c03/ex04/main.c ./src/c03/ex04/ft_strstr.c -o /Users/zhlim/Checker/Pool-Destroyer-master/user_output/c03/ex04
+> test 1
+diff ok :D
+
+> test 2
+diff ok :D
+
+> test 3
+diff ok :D
+
+> test 4
+diff ok :D
+
+= ex05 =
+==========================================
+
+Norme: ./src/c03/ex05/ft_strlcat.c: KO
+src/c03/ex05/ft_strlcat.c: Error!
+Error: SPACE_REPLACE_TAB    (line:  40, col:   9):	Found space when expecting tab
+Error: DECL_ASSIGN_LINE     (line:  40, col:  16):	Declaration and assignation on a single line
+Error: SPACE_REPLACE_TAB    (line:  41, col:   9):	Found space when expecting tab
+Error: DECL_ASSIGN_LINE     (line:  41, col:  14):	Declaration and assignation on a single line
+Error: NL_AFTER_VAR_DECL    (line:  42, col:   1):	Variable declarations must be followed by a newline
+Error: WRONG_SCOPE_COMMENT  (line:  43, col:   5):	Comment is invalid in this scope
+
+
+
+All c03 tests are done.
+
+Its either your code survives or it gets wrecked.
