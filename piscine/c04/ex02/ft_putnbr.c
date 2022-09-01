@@ -6,7 +6,7 @@
 /*   By: zhlim < zhlim@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 13:06:24 by zhlim             #+#    #+#             */
-/*   Updated: 2022/09/01 13:06:41 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/09/01 22:33:22 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,6 @@ void	ft_write(int nb)
 
 void	ft_putnbr(int nb)
 {
-	int	i;
-	int	n;
-
-	i = 0;
-	n = -1;
 	if (nb <= 2147483647)
 	{
 		if (nb == 0)
@@ -43,7 +38,7 @@ void	ft_putnbr(int nb)
 			ft_write(nb);
 		if (nb < 0)
 		{
-			nb *= n;
+			nb *= -1;
 			write(1, "-", 1);
 			ft_write(nb);
 		}

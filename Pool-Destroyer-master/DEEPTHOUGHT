@@ -1,16 +1,13 @@
 $> hostname; uname -msr
-u91z01s01.42kl.edu.my
-Darwin 19.6.0 x86_64
+zk-VirtualBox
+Linux 5.15.0-46-generic x86_64
 $> date
-Thu  1 Sep 2022 17:35:38 +08
+Thu Sep  1 10:58:28 PM +08 2022
 $> gcc --version
+gcc (Ubuntu 11.2.0-19ubuntu1) 11.2.0
 $> clang --version
-Apple clang version 12.0.0 (clang-1200.0.32.28)
-Target: x86_64-apple-darwin19.6.0
-Thread model: posix
-InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
 $> echo $USER_NAME
-zhlim
+zk
 
 Ready for testing
 
@@ -20,7 +17,7 @@ LOADING c03:
 ==========================================
 
 Norme: ./src/c03/ex00/ft_strcmp.c: OK
-$> gcc -Wall -Werror -Wextra ./tests/c03/ex00/main.c ./src/c03/ex00/ft_strcmp.c -o /Users/zhlim/Checker/Pool-Destroyer-master/user_output/c03/ex00
+$> gcc -Wall -Werror -Wextra ./tests/c03/ex00/main.c ./src/c03/ex00/ft_strcmp.c -o /home/zk/Desktop/Git/Pool-Destroyer-master/user_output/c03/ex00
 > test 1
 diff ok :D
 
@@ -34,7 +31,7 @@ diff ok :D
 ==========================================
 
 Norme: ./src/c03/ex01/ft_strncmp.c: OK
-$> gcc -Wall -Werror -Wextra ./tests/c03/ex01/main.c ./src/c03/ex01/ft_strncmp.c -o /Users/zhlim/Checker/Pool-Destroyer-master/user_output/c03/ex01
+$> gcc -Wall -Werror -Wextra ./tests/c03/ex01/main.c ./src/c03/ex01/ft_strncmp.c -o /home/zk/Desktop/Git/Pool-Destroyer-master/user_output/c03/ex01
 > test 1
 diff ok :D
 
@@ -48,35 +45,65 @@ diff ok :D
 ==========================================
 
 Norme: ./src/c03/ex02/ft_strcat.c: OK
-$> gcc -Wall -Werror -Wextra ./tests/c03/ex02/main.c ./src/c03/ex02/ft_strcat.c -o /Users/zhlim/Checker/Pool-Destroyer-master/user_output/c03/ex02
+$> gcc -Wall -Werror -Wextra ./tests/c03/ex02/main.c ./src/c03/ex02/ft_strcat.c -o /home/zk/Desktop/Git/Pool-Destroyer-master/user_output/c03/ex02
 > test 1
-diff ok :D
+1c1
+< 01234567890123456789
+---
+> Û`©p0123456789Û`©p0123456789
+
+diff ko :(
 
 > test 2
-diff ok :D
+1c1
+< hey i'm davehey i'm dave
+---
+> Ë5chey i'm daveË5chey i'm dave
+
+diff ko :(
 
 > test 3
-diff ok :D
+1c1
+< So long, and thanks for all the fishSo long, and thanks for all the fish
+---
+> »¥s^So long, and thanks for all the fish»¥s^So long, and thanks for all the fish
+
+diff ko :(
 
 = ex03 =
 ==========================================
 
 Norme: ./src/c03/ex03/ft_strncat.c: OK
-$> gcc -Wall -Werror -Wextra ./tests/c03/ex03/main.c ./src/c03/ex03/ft_strncat.c -o /Users/zhlim/Checker/Pool-Destroyer-master/user_output/c03/ex03
+$> gcc -Wall -Werror -Wextra ./tests/c03/ex03/main.c ./src/c03/ex03/ft_strncat.c -o /home/zk/Desktop/Git/Pool-Destroyer-master/user_output/c03/ex03
 > test 1
-diff ok :D
+1c1
+< 01234567 01234567
+---
+> ÛÌ w01234567 ÛÌ w01234567
+
+diff ko :(
 
 > test 2
-diff ok :D
+1c1
+< hey i hey i
+---
+> ‹ÓÃhey i ‹ÓÃhey i
+
+diff ko :(
 
 > test 3
-diff ok :D
+1c1
+< So long, and thanks for all  So long, and thanks for all 
+---
+> ëASo long, and thanks for all ëASo long, and thanks for all
+
+diff ko :(
 
 = ex04 =
 ==========================================
 
 Norme: ./src/c03/ex04/ft_strstr.c: OK
-$> gcc -Wall -Werror -Wextra ./tests/c03/ex04/main.c ./src/c03/ex04/ft_strstr.c -o /Users/zhlim/Checker/Pool-Destroyer-master/user_output/c03/ex04
+$> gcc -Wall -Werror -Wextra ./tests/c03/ex04/main.c ./src/c03/ex04/ft_strstr.c -o /home/zk/Desktop/Git/Pool-Destroyer-master/user_output/c03/ex04
 > test 1
 diff ok :D
 
@@ -92,14 +119,39 @@ diff ok :D
 = ex05 =
 ==========================================
 
-Norme: ./src/c03/ex05/ft_strlcat.c: KO
-src/c03/ex05/ft_strlcat.c: Error!
-Error: SPACE_REPLACE_TAB    (line:  40, col:   9):	Found space when expecting tab
-Error: DECL_ASSIGN_LINE     (line:  40, col:  16):	Declaration and assignation on a single line
-Error: SPACE_REPLACE_TAB    (line:  41, col:   9):	Found space when expecting tab
-Error: DECL_ASSIGN_LINE     (line:  41, col:  14):	Declaration and assignation on a single line
-Error: NL_AFTER_VAR_DECL    (line:  42, col:   1):	Variable declarations must be followed by a newline
-Error: WRONG_SCOPE_COMMENT  (line:  43, col:   5):	Comment is invalid in this scope
+Norme: ./src/c03/ex05/ft_strlcat.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c03/ex05/main.c ./src/c03/ex05/ft_strlcat.c -o /home/zk/Desktop/Git/Pool-Destroyer-master/user_output/c03/ex05
+> test 1
+1c1
+< 10 012
+---
+> 14 [>s
+
+diff ko :(
+
+> test 2
+1c1
+< 12 hey i'm dave
+---
+> 18 +Â`hey i'
+
+diff ko :(
+
+> test 3
+1c1
+< 36 So long, and thanks for all the fish
+---
+> 42 {*˜aSo long, and thanks for all the fis
+
+diff ko :(
+
+> test 4
+1c1
+< 18
+---
+> 18 ‹Ñï|
+
+diff ko :(
 
 
 
