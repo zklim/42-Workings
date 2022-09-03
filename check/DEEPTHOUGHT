@@ -1,0 +1,184 @@
+$> hostname; uname -msr
+u91z01s03.42kl.edu.my
+Darwin 19.6.0 x86_64
+$> date
+Fri  2 Sep 2022 11:03:35 +08
+$> gcc --version
+$> clang --version
+Apple clang version 12.0.0 (clang-1200.0.32.28)
+Target: x86_64-apple-darwin19.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> echo $USER_NAME
+zhlim
+
+Ready for testing
+
+LOADING c02:
+
+= ex00 =
+==========================================
+
+Norme: ./src/c02/ex00/ft_strcpy.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c02/ex00/main.c ./src/c02/ex00/ft_strcpy.c -o /Users/zhlim/Projects/Workings/Pool-Destroyer-master/user_output/c02/ex00
+
+diff ok :D
+
+= ex01 =
+==========================================
+
+Norme: ./src/c02/ex01/ft_strncpy.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c02/ex01/main.c ./src/c02/ex01/ft_strncpy.c -o /Users/zhlim/Projects/Workings/Pool-Destroyer-master/user_output/c02/ex01
+
+diff ok :D
+
+= ex02 =
+==========================================
+
+Norme: ./src/c02/ex02/ft_str_is_alpha.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c02/ex02/main.c ./src/c02/ex02/ft_str_is_alpha.c -o /Users/zhlim/Projects/Workings/Pool-Destroyer-master/user_output/c02/ex02
+> test 1
+diff ok :D
+
+> test 2
+diff ok :D
+
+> test 3
+diff ok :D
+
+> test 4
+diff ok :D
+
+> test 5
+diff ok :D
+
+= ex03 =
+==========================================
+
+Norme: ./src/c02/ex03/ft_str_is_numeric.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c02/ex03/main.c ./src/c02/ex03/ft_str_is_numeric.c -o /Users/zhlim/Projects/Workings/Pool-Destroyer-master/user_output/c02/ex03
+> test 1
+diff ok :D
+
+> test 2
+diff ok :D
+
+> test 3
+diff ok :D
+
+> test 4
+diff ok :D
+
+> test 5
+diff ok :D
+
+= ex04 =
+==========================================
+
+Norme: ./src/c02/ex04/ft_str_is_lowercase.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c02/ex04/main.c ./src/c02/ex04/ft_str_is_lowercase.c -o /Users/zhlim/Projects/Workings/Pool-Destroyer-master/user_output/c02/ex04
+> test 1
+diff ok :D
+
+> test 2
+diff ok :D
+
+> test 3
+diff ok :D
+
+> test 4
+diff ok :D
+
+> test 5
+diff ok :D
+
+= ex05 =
+==========================================
+
+Norme: ./src/c02/ex05/ft_str_is_uppercase.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c02/ex05/main.c ./src/c02/ex05/ft_str_is_uppercase.c -o /Users/zhlim/Projects/Workings/Pool-Destroyer-master/user_output/c02/ex05
+> test 1
+diff ok :D
+
+> test 2
+diff ok :D
+
+> test 3
+diff ok :D
+
+> test 4
+diff ok :D
+
+> test 5
+diff ok :D
+
+= ex06 =
+==========================================
+
+Norme: ./src/c02/ex06/ft_str_is_printable.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c02/ex06/main.c ./src/c02/ex06/ft_str_is_printable.c -o /Users/zhlim/Projects/Workings/Pool-Destroyer-master/user_output/c02/ex06
+
+diff ok :D
+
+= ex07 =
+==========================================
+
+Norme: ./src/c02/ex07/ft_strupcase.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c02/ex07/main.c ./src/c02/ex07/ft_strupcase.c -o /Users/zhlim/Projects/Workings/Pool-Destroyer-master/user_output/c02/ex07
+> test 1
+diff ok :D
+
+> test 2
+diff ok :D
+
+= ex08 =
+==========================================
+
+Norme: ./src/c02/ex08/ft_strlowcase.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c02/ex08/main.c ./src/c02/ex08/ft_strlowcase.c -o /Users/zhlim/Projects/Workings/Pool-Destroyer-master/user_output/c02/ex08
+> test 1
+diff ok :D
+
+> test 2
+diff ok :D
+
+= ex09 =
+==========================================
+
+Norme: ./src/c02/ex09/ft_strcapitalize.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c02/ex09/main.c ./src/c02/ex09/ft_strcapitalize.c -o /Users/zhlim/Projects/Workings/Pool-Destroyer-master/user_output/c02/ex09
+> test 1
+diff ok :D
+
+> test 2
+diff ok :D
+
+> test 2
+diff ok :D
+
+= ex10 =
+==========================================
+
+Norme: ./src/c02/ex10/ft_strlcpy.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c02/ex10/main.c ./src/c02/ex10/ft_strlcpy.c -o /Users/zhlim/Projects/Workings/Pool-Destroyer-master/user_output/c02/ex10
+
+diff ok :D
+
+= ex11 =
+==========================================
+
+Norme: ./src/c02/ex11/ft_putstr_non_printable.c: OK
+$> gcc -Wall -Werror -Wextra ./tests/c02/ex11/main.c ./src/c02/ex11/ft_putstr_non_printable.c -o /Users/zhlim/Projects/Workings/Pool-Destroyer-master/user_output/c02/ex11
+
+diff ok :D
+
+= ex12 =
+==========================================
+
+This exercise is not supported yet.
+
+
+
+All c02 tests are done.
+
+Its either your code survives or it gets wrecked.

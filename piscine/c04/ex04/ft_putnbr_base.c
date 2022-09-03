@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 19:00:02 by zhlim             #+#    #+#             */
-/*   Updated: 2022/09/01 19:00:49 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/09/03 13:53:15 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,19 @@ int	ft_check(char *base)
 	int	i;
 	int	j;
 
-	i = -1;
-	while (base[++i])
+	i = 0;
+	while (base[i])
 	{
 		if (base[i] == '+' || base[i] == '-')
 			return (0);
 		j = i + 1;
-		while (base[++j])
+		while (base[j])
 		{
 			if (base[i] == base[j])
 				return (0);
+			j++;
 		}
+		i++;
 	}
 	if (i <= 1)
 		return (0);
@@ -36,7 +38,7 @@ int	ft_check(char *base)
 
 void	ft_write(int nbr, char *base, int i)
 {
-	char	print[20];
+	char	print[32];
 	int		j;
 
 	j = 0;
@@ -60,6 +62,6 @@ void	ft_putnbr_base(int nbr, char *base)
 	int	i;
 
 	i = ft_check(base);
-	if (i > 0)
+	if (i > 1)
 		ft_write(nbr, base, i);
 }
