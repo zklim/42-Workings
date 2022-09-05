@@ -1,6 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/05 17:01:28 by zhlim             #+#    #+#             */
+/*   Updated: 2022/09/05 18:47:01 by zhlim            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
-int	ft_checkbase(char *base)
+int	ft_index(char c, char *base)
+{
+	int	i;
+
+	i = 0;
+	while (base[i])
+	{
+		if (c == base[i])
+			return (i);
+		i++;
+	}
+	return (0);
+}
+
+int	ft_check(char *base)
 {
 	int	i;
 	int	j;
@@ -24,81 +50,40 @@ int	ft_checkbase(char *base)
 	return (i);
 }
 
-int	ft_atoi(char *str, char *to_find)
-
+int	ft_atoi(char *str, char *base, int size)
 {
 	int	sign;
 	int	ret;
 	int	i;
+	int	ind;
 
 	sign = 1;
 	ret = 0;
 	i = 0;
-	while (str[i] < '0' || str[i] > '9')
+	ind = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	while (str[i] == '+' || str[i] == '-')
 	{
-		if (str[i] == '-' || str[i] == '+')
-		{
-			if (str[i] == '-')
-				sign *= -1;
-		}
-		if (str[i] == '\0')
-			return (0);
+		if (str[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i])
 	{
-		ret = (str[i] - '0') + (ret * 10);
+		ind = ft_index(str[i], base);
+		ret = ret * size + ind;
 		i++;
 	}
 	return (ret * sign);
 }
-{
-	int	i;
-	int	j;
-	int	res;
 
-	i = 0;
-	res = 0;
-	while (str[i] != '\0')
-	{
-		j = 0;
-		while (to_find[j] != '\0')
-		{
-			if (str[i] == to_find[j])
-			{
-				res += j;
-			}
-			j++;
-		}
-		i++;
-	}
+int	ft_atoi_base(char *str, char *base)
+{
+	int	size;
+
+	size = ft_check(base);
+	if (size > 1)
+		return (ft_atoi(str, base, size));
 	return (0);
-}
-
-int ft_atoi_base(char *str, char *base)
-{
-	int	res;
-	int	blen;
-	int	ret;
-
-	blen = ft_checkbase(base);
-	if (blen > 1)
-	{
-		res = ft_atoi(str, base);
-		while (res)
-		{
-			ret = res % 10;
-			res /= 10;
-		}
-		return (ret);
-	}
-	return (0);
-}
-
-int	main(void)
-{
-	char a[] = "ab";
-	char b[] = "0123456789abcdef";
-
-	printf("%d\n", ft_atoi_base(a, b));
 }

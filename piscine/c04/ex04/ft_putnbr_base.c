@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 19:00:02 by zhlim             #+#    #+#             */
-/*   Updated: 2022/09/03 13:53:15 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/09/05 14:38:18 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,32 +36,24 @@ int	ft_check(char *base)
 	return (i);
 }
 
-void	ft_write(int nbr, char *base, int i)
-{
-	char	print[32];
-	int		j;
-
-	j = 0;
-	if (nbr < 0)
-	{
-		nbr *= -1;
-		write(1, "-", 1);
-	}
-	while (nbr)
-	{
-		print[j] = base[nbr % i];
-		nbr /= i;
-		j++;
-	}
-	while (j--)
-		write(1, &print[j], 1);
-}
-
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int	i;
+	int	bcount;
 
-	i = ft_check(base);
-	if (i > 1)
-		ft_write(nbr, base, i);
+	bcount = ft_check(base);
+	if (bcount > 1)
+	{
+		if (nbr < 0)
+		{
+			write(1, "-", 1);
+			nbr *= -1;
+		}
+		if (nbr < bcount)
+			write(1, &base[nbr], 1);
+		if (nbr >= bcount)
+		{
+			ft_putnbr_base(nbr / bcount, base);
+			ft_putnbr_base(nbr % bcount, base);
+		}
+	}
 }

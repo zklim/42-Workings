@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhlim < zhlim@student.42kl.edu.my>         +#+  +:+       +#+        */
+/*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 13:06:24 by zhlim             #+#    #+#             */
-/*   Updated: 2022/09/05 18:55:40 by zhlim            ###   ########.fr       */
+/*   Created: 2022/09/05 17:50:46 by zhlim             #+#    #+#             */
+/*   Updated: 2022/09/05 17:51:19 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,21 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+void	ft_putstr(char *str)
 {
-	if (nb == -2147483648)
-	{
-		ft_putnbr(nb / 10);
-		ft_putchar('8');
-	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-nb);
-	}
-	else 
-	{
-		if (nb > 9)
-			ft_putnbr(nb / 10);
-		ft_putchar('0' + (nb % 10));
-	}
+	int	i;
+
+	i = 0;
+	while (str[i])
+		ft_putchar(str[i++]);
+	ft_putchar('\n');
+}
+
+int	main(int ac, char **av)
+{
+	int	i;
+
+	i = 0;
+	while (++i < ac)
+		ft_putstr(av[ac - i]);
 }
