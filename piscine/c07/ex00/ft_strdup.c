@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 20:00:41 by zhlim             #+#    #+#             */
-/*   Updated: 2022/09/05 20:03:18 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/09/06 19:23:24 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(char *src)
 	i = 0;
 	while (src[i])
 		i++;
-	dest = malloc(sizeof(src * i));
+	dest = (char)malloc(sizeof(src * i));
 	i = 0;
 	if (dest == NULL)
 		return (0);

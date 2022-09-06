@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 20:14:25 by zhlim             #+#    #+#             */
-/*   Updated: 2022/09/06 20:07:20 by zhlim            ###   ########.fr       */
+/*   Created: 2022/09/06 16:08:18 by zhlim             #+#    #+#             */
+/*   Updated: 2022/09/06 16:09:56 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_H
+# define FT_H
 
-int	ft_ultimate_range(int **range, int min, int max)
-{
-	int	*tab;
-	int	i;
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
-	if (min >= max)
-	{
-		*range = NULL;
-		return (0);
-	}
-	tab = (int *)malloc(sizeof(*tab) * (max - min));
-	if (tab == NULL)
-		return (-1);
-	else
-	{
-		i = -1;
-		while (++i < max - min)
-			tab[i] = min + i;
-		*range = tab;
-		return (i);
-	}
-}
+#endif
